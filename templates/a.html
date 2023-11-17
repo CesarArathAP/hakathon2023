@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatBot Template</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #chat-container {
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    #chat-messages {
+      height: 300px;
+      overflow-y: scroll;
+      padding: 10px;
+    }
+
+    #user-input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: none;
+      border-top: 1px solid #ccc;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="chat-messages"></div>
+    <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+  </div>
+
+  <script>
+    const chatMessages = document.getElementById('chat-messages');
+    const userInput = document.getElementById('user-input');
+
+    // Función para agregar mensajes al contenedor del chat
+    function addMessage(sender, message) {
+      const messageDiv = document.createElement('div');
+      messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+      chatMessages.appendChild(messageDiv);
+
+      // Desplazar el scroll hacia abajo para mostrar el último mensaje
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Función para procesar la entrada del usuario y generar una respuesta del chatbot
+    function processUserInput() {
+      const userMessage = userInput.value.trim();
+      if (userMessage !== '') {
+        addMessage('Usuario', userMessage);
+        userInput.value = ''; // Limpiar el campo de entrada
+
+        // Simular respuesta del chatbot (puedes personalizar esta lógica)
+        setTimeout(() => {
+          const botResponse = '¡Hola! Soy un chatbot. Gracias por tu mensaje.';
+          addMessage('ChatBot', botResponse);
+        }, 500);
+      }
+    }
+
+    // Agregar un evento para procesar la entrada del usuario al presionar Enter
+    userInput.addEventListener('keyup', (event) => {
+      if (event.key === 'Enter') {
+        processUserInput();
+      }
+    });
+  </script>
+</body>
+</html>

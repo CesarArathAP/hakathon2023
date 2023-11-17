@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.boton{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    display: none;
+}
+
+#webcam-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#label-container {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#estado {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#myBar {
+    width: 10%;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
